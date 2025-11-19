@@ -13,7 +13,7 @@ const useFetch = (api) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(api, { signal: controller.signal });
+        const response = await fetch(api, { signal: controller.signal, credentials: 'include' });
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
